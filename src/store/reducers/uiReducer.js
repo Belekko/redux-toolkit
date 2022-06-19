@@ -8,14 +8,15 @@ export function toggle(){
 
 
 const initialState={
-    cardIsVisible: false
+    cartIsVisible: false
 }
 
 
 export const uiReducer=(prevState=initialState, action)=>{
     if(action.type === TOGGLE){
         return {
-            cartIsVisible: !prevState.cardIsVisible
+            cartIsVisible: !prevState.cartIsVisible
         }
     }
+    return prevState
 }
