@@ -1,23 +1,22 @@
 import ProductItem from './ProductItem';
 import classes from './Products.module.css';
+import {useSelector} from "react-redux";
 
-const DUMMY_PRODUCTS = [{
-    id: "p1", price: 6, title: "My First Book", description: "The first book i ever wrote ",
-}, {
-    id: "p2", price: 2, title: "My Second Book", description: "The first book i ever wrote ",
-},];
 
 const Products = (props) => {
+    const products = useSelector(state => state.addProduct.products)
+
+
     return (<section className={classes.products}>
-            <h2>Buy your favorite products</h2>
-            <ul>
-                {DUMMY_PRODUCTS.map(product => (<ProductItem
-                    id={product.id}
-                    key={product.id}
-                    title={product.title}
-                    price={product.price}
-                    description={product.description}
-                />))}
+        <h2>Buy your favorite products</h2>
+        <ul>
+            {products.map(product => (<ProductItem
+                id={product.id}
+                key={product.id}
+                title={product.title}
+                price={product.price}
+                description={product.description}
+            />))}
             </ul>
         </section>);
 };

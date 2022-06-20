@@ -19,7 +19,6 @@ function App() {
     useEffect(() => {
         let timer = setTimeout(() => {
             dispatch(uiActions.hideNotification())
-
         }, 2000)
         return () => {
             clearTimeout(timer)

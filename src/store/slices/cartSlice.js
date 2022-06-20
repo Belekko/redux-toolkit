@@ -72,7 +72,7 @@ export const sendCartData = (cart) => {
                     status: "success", title: "Success !", message: "Sent cart data successfully !",
                 }));
                 return response.json();
-            })
+        })
             .then((data) => {
                 console.log(data);
             })
