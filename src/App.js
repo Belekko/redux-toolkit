@@ -5,8 +5,9 @@ import Layout from "./components/Layout/Layout";
 import Products from "./components/Shop/Products";
 import Notification from "./components/UI/Notification";
 import {uiActions} from "./store/slices/uiSlice";
-import {BASE_URL} from "./utils/constants/general";
+// import {BASE_URL} from "./utils/constants/general";
 import {sendCartData} from "./store/slices/cartSlice";
+import AddProduct from "./components/AddProduct/AddProduct";
 
 let isInitial = true;
 
@@ -33,7 +34,8 @@ function App() {
         dispatch(sendCartData(cart))
     }, [cart, dispatch]);
 
-    return (<>
+    return (
+        <>
         {notification && (<Notification
             status={notification.status}
             title={notification.title}
@@ -42,6 +44,8 @@ function App() {
         <Layout>
             {isShow && <Cart/>}
             <Products/>
+            <AddProduct/>
+
         </Layout>
     </>);
 }

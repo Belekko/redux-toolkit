@@ -55,7 +55,6 @@ export  const cartSlice=createSlice({
 export const cartActions = cartSlice.actions
 export default cartSlice
 
-
 export const sendCartData = (cart) => {
     return (dispatch) => {
         dispatch(uiActions.showNotification({

@@ -10,14 +10,26 @@ const initialState = {
     },]
 }
 
+let idNum=2
+
+
 const addProductSlice = createSlice({
     name: 'addProduct',
     initialState,
     reducers:{
-
+        addProduct(state, action) {
+            idNum++
+            state.products.push({
+                id: 'p'+idNum ,
+                price: action.payload.price,
+                title: action.payload.title,
+                description: action.payload.des
+            })
+        }
     }
-
 })
 
 export const addProductActions=addProductSlice.actions
 export default addProductSlice
+
+// export const getProductData=

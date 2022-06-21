@@ -6,7 +6,7 @@ import {useSelector} from "react-redux";
 const Products = (props) => {
     const products = useSelector(state => state.addProduct.products)
 
-
+    console.log(products)
     return (<section className={classes.products}>
         <h2>Buy your favorite products</h2>
         <ul>
@@ -14,7 +14,7 @@ const Products = (props) => {
                 id={product.id}
                 key={product.id}
                 title={product.title}
-                price={product.price}
+                price={+product.price}
                 description={product.description}
             />))}
             </ul>
