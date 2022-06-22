@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './AddProduct.module.css'
 import {useDispatch} from "react-redux";
-import {addProductActions} from "../../store/slices/addProductSlice";
+import {postProductData} from "../../store/slices/addProductSlice";
 
 
 const AddProduct = () => {
@@ -16,8 +16,7 @@ const AddProduct = () => {
 
     const addHandler = (e) => {
         e.preventDefault()
-        console.log('ok')
-        dispatch(addProductActions.addProduct(product))
+        dispatch(postProductData(product))
     }
     return (
         <div className={styles.formBlock}>

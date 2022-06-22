@@ -24,7 +24,7 @@ function App() {
         return () => {
             clearTimeout(timer)
         }
-    }, [notification])
+    }, [notification,dispatch])
 
     useEffect(() => {
         if (isInitial) {
